@@ -90,9 +90,9 @@ body::before {
     z-index: 0;
     contain: strict;
     background:
-        radial-gradient(ellipse 60% 50% at 15% 20%, #8AFFC433, transparent),
-        radial-gradient(ellipse 50% 60% at 80% 65%, #6366F126, transparent),
-        radial-gradient(ellipse 40% 40% at 50% 80%, #34D39926, transparent);
+        radial-gradient(circle 40vw at 15% 15%, var(--pico-primary-background), transparent),
+        radial-gradient(circle 45vw at 85% 60%, var(--pico-secondary-background), transparent),
+        radial-gradient(circle 35vw at 50% 85%, var(--pico-primary-background), transparent);
 }
 
 body::after {
@@ -103,8 +103,8 @@ body::after {
     z-index: 0;
     contain: strict;
     background-image:
-        linear-gradient(to right, #FFFFFF0D 1px, transparent 1px),
-        linear-gradient(to bottom, #FFFFFF0D 1px, transparent 1px);
+        linear-gradient(to right, var(--pico-muted-border-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--pico-muted-border-color) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000000, transparent);
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000000, transparent);
@@ -116,7 +116,7 @@ body > * {
 }
 
 :focus-visible {
-    outline: 1px solid var(--pico-primary);
+    outline: 2px solid var(--pico-primary);
     border-radius: var(--pico-border-radius);
 }
 
@@ -195,9 +195,10 @@ header nav details.dropdown > summary {
     align-items: center;
     list-style: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
+    min-height: 2.75rem;
     color: var(--pico-color);
-    font-size: calc(var(--pico-font-size) * 0.65);
+    font-size: calc(var(--pico-font-size) * 0.75);
     transition: color 0.15s ease;
 }
 
@@ -246,7 +247,7 @@ header nav .brand img {
 header nav .brand a {
     font-family: var(--pico-font-family-display);
     font-weight: 500;
-    font-size: calc(var(--pico-font-size) * 0.9);
+    font-size: var(--pico-font-size);
     letter-spacing: -0.02em;
     color: var(--pico-contrast);
     text-decoration: none;
@@ -345,7 +346,7 @@ nav[aria-label=breadcrumb] ul li {
     justify-content: flex-end;
     align-items: center;
     display: flex;
-    font-size: calc(var(--pico-font-size) * 0.65);
+    font-size: calc(var(--pico-font-size) * 0.75);
     color: var(--pico-muted-color);
 }
 
@@ -469,7 +470,7 @@ dialog.search .result-title {
 dialog.search .result-content {
     display: block;
     color: var(--pico-muted-color);
-    font-size: calc(var(--pico-font-size) * 0.7);
+    font-size: calc(var(--pico-font-size) * 0.75);
 }
 
 dialog.search .result-content b {
@@ -487,7 +488,7 @@ dialog.search .load-more {
     border: 1px solid var(--pico-contrast-border);
     cursor: pointer;
     display: block;
-    font-size: calc(var(--pico-font-size) * 0.7);
+    font-size: calc(var(--pico-font-size) * 0.75);
     margin: 1rem auto;
     padding: 0.5rem 1.5rem;
     border-radius: 9999px;
@@ -534,7 +535,7 @@ h4, h5, h6 {
 h1 {
     --pico-typography-spacing-vertical: 2rem;
     font-size: calc(var(--pico-font-size) * 2.1);
-    line-height: 1.1;
+    line-height: 1.2;
     text-align: center;
 }
 
@@ -547,14 +548,14 @@ h2 {
 
 h3 {
     --pico-typography-spacing-vertical: 1.25rem;
-    font-size: calc(var(--pico-font-size) * 0.9);
-    line-height: 1.3;
+    font-size: var(--pico-font-size);
+    line-height: 1.5;
 }
 
 h4 {
     --pico-typography-spacing-vertical: 1rem;
-    font-size: calc(var(--pico-font-size) * 0.8);
-    line-height: 1.4;
+    font-size: calc(var(--pico-font-size) * 0.9);
+    line-height: 1.5;
 }
 
 img {
@@ -569,7 +570,7 @@ img {
     margin: 0.5rem 0;
     line-height: inherit;
     font-family: var(--pico-font-family-display);
-    font-size: calc(var(--pico-font-size) * 0.8);
+    font-size: calc(var(--pico-font-size) * 0.9);
     font-weight: 500;
     letter-spacing: 0;
     border: 1px solid var(--pico-contrast-border);
@@ -589,17 +590,16 @@ img {
 
 .btn-primary,
 .btn:first-of-type {
-    background: linear-gradient(135deg, var(--pico-primary), var(--pico-secondary));
+    background: var(--pico-primary);
     color: var(--pico-primary-inverse);
-    border-color: var(--pico-text-selection-color);
-    box-shadow: 0 0 1.5rem -0.25rem var(--pico-text-selection-color);
+    border-color: var(--pico-primary);
 }
 
 .btn-primary:hover,
 .btn:first-of-type:hover {
-    background: linear-gradient(135deg, var(--pico-primary-hover), var(--pico-secondary-hover));
+    background: var(--pico-primary-hover);
     color: var(--pico-primary-inverse);
-    box-shadow: 0 0 2rem -0.25rem #8AFFC44D;
+    border-color: var(--pico-primary-hover);
 }
 
 .btn::after {
@@ -623,7 +623,7 @@ img {
 .caption:not(:empty) {
     max-width: 60rem;
     margin: 0.75rem auto;
-    font-size: calc(var(--pico-font-size) * 0.65);
+    font-size: calc(var(--pico-font-size) * 0.75);
     color: var(--pico-muted-color);
     font-weight: 300;
 }
@@ -664,7 +664,7 @@ footer.bottom {
     -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid var(--pico-contrast-border);
     color: var(--pico-muted-color);
-    font-size: calc(var(--pico-font-size) * 0.65);
+    font-size: calc(var(--pico-font-size) * 0.75);
     font-weight: 300;
     margin: 0;
 }
@@ -729,7 +729,7 @@ footer.cms-content .cards .card-item:hover {
 
 footer.cms-content .cards .title {
     color: var(--pico-contrast);
-    font-size: calc(var(--pico-font-size) * 0.65);
+    font-size: calc(var(--pico-font-size) * 0.75);
     font-weight: 700;
     letter-spacing: 0.05em;
     margin-bottom: 1.5rem;
@@ -738,7 +738,7 @@ footer.cms-content .cards .title {
 
 footer.cms-content .cards .text {
     color: #FFFFFFCC;
-    font-size: calc(var(--pico-font-size) * 0.7);
+    font-size: calc(var(--pico-font-size) * 0.75);
     font-weight: 300;
 }
 
@@ -758,6 +758,7 @@ footer.cms-content ul {
 
 footer.cms-content ul li {
     list-style: none;
+    line-height: 2;
 }
 
 footer.cms-content .heading h1,

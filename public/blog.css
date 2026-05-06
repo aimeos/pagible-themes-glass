@@ -46,7 +46,7 @@
 
 .blog .date {
     color: var(--pico-muted-color);
-    font-size: calc(var(--pico-font-size) * 0.6);
+    font-size: calc(var(--pico-font-size) * 0.65);
     font-weight: 300;
 }
 
@@ -71,7 +71,7 @@
 
 .blog .first .date-month {
     text-transform: uppercase;
-    font-size: calc(var(--pico-font-size) * 0.6);
+    font-size: calc(var(--pico-font-size) * 0.65);
     letter-spacing: 0.05em;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .blog .second h3 {
-    font-size: calc(var(--pico-font-size) * 0.75);
+    font-size: calc(var(--pico-font-size) * 0.85);
 }
 
 @media (min-width: 768px) {

@@ -112,7 +112,7 @@
     top: -0.75rem;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--pico-primary), var(--pico-secondary));
+    background: var(--pico-primary);
     color: var(--pico-primary-inverse);
     border-radius: 9999px;
     font-weight: 500;
@@ -224,6 +224,7 @@
     display: block;
     width: 100%;
     text-align: center;
+    margin-top: auto;
     padding: 0.75rem 1.5rem;
     background: var(--pico-contrast-background);
     color: var(--pico-contrast);
@@ -241,14 +242,14 @@
 }
 
 .pricing .highlight .btn {
-    background: linear-gradient(135deg, var(--pico-primary), var(--pico-secondary));
+    background: var(--pico-primary);
     color: var(--pico-primary-inverse);
-    border-color: var(--pico-text-selection-color);
+    border-color: var(--pico-primary);
     box-shadow: 0 0 1.5rem -0.25rem var(--pico-text-selection-color);
 }
 
 .pricing .highlight .btn:hover {
-    background: linear-gradient(135deg, var(--pico-primary-hover), var(--pico-secondary-hover));
+    background: var(--pico-primary-hover);
     color: var(--pico-primary-inverse);
-    box-shadow: 0 0 2rem -0.25rem #8AFFC44D;
+    box-shadow: 0 0 2rem -0.25rem var(--pico-text-selection-color);
 }

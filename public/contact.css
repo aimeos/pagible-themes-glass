@@ -24,11 +24,11 @@
     display: inline-block;
     margin: 0.5rem 0;
     font-weight: 500;
-    font-size: calc(var(--pico-font-size) * 0.7);
+    font-size: calc(var(--pico-font-size) * 0.75);
 }
 
 .contact input, .contact textarea {
-    border: 1px solid var(--pico-contrast-border);
+    border: 1px solid #FFFFFF59;
     background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -60,7 +60,7 @@
 
 .contact .errors {
     color: var(--pico-form-element-invalid-focus-color);
-    font-size: calc(var(--pico-font-size) * 0.65);
+    font-size: calc(var(--pico-font-size) * 0.75);
 }
 
 .contact .error {
@@ -84,7 +84,7 @@
 }
 
 .contact button:disabled {
-    border: 1px solid var(--pico-contrast-border);
+    border: 1px solid #FFFFFF59;
     background: var(--pico-contrast-background);
     color: var(--pico-muted-color);
 }

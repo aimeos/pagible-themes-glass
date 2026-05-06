@@ -11,8 +11,8 @@
     padding: 3rem min(5%, 2rem);
 }
 
-.cms-content > :nth-child(even) {
-    background: var(--pico-contrast-background);
+.cms-content > :nth-child(4n+2) {
+    background-color: #0F172A80;
 }
 
 .cms-content > .heading + .text,
@@ -50,7 +50,7 @@
 }
 
 .cms-content .text .container {
-    max-width: 50rem;
+    max-width: 44rem;
     margin: auto;
 }
 

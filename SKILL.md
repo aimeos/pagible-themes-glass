@@ -22,7 +22,7 @@ Dark, modern, layered. Deep navy background (#060A12) with frosted glass panels 
 - Border radius: 0.75rem (default), 1.5rem (cards/containers), 9999px (buttons/inputs/badges) | Shadows: deep, e.g. 0 1.25rem 3.75rem -0.9375rem rgba(0,0,0,0.4)
 - Max widths: 80rem (header/docs), 75rem (container), 60rem (blog), 50rem (text) | Breakpoints: 576px, 768px, 992px
 - Components: hero, cards (1->2 col grid), blog (featured+list), questions/FAQ (details/summary accordion), contact form (pill inputs), toc, slideshow, article, search dialog, docs sidebar (20rem, sticky), glass footer with top border
-- Buttons: pill-shaped (9999px radius), primary=gradient (mint green to indigo), secondary=contrast-background with border
+- Buttons: pill-shaped (9999px radius), primary=solid mint green, secondary=contrast-background with border
 - Glass panels: background var(--pico-contrast-background), border var(--pico-contrast-border), backdrop-filter blur(20px)
 
 ## Accessibility
@@ -37,7 +37,7 @@ concise, confident, modern
 - Use 1.5rem radius for cards/containers, 9999px for buttons/inputs/badges
 - Use weight 300 for body text, 500 for headings and labels
 - Use var(--pico-contrast-background) backgrounds with var(--pico-contrast-border) borders for glass surfaces
-- Use gradients (mint-green-to-indigo) for primary CTAs and highlighted elements
+- Use solid var(--pico-primary) for primary CTAs; reserve gradients for subtle background tints only
 
 ## Rules: Don't
 - Don't use solid white or light backgrounds (exception: text on gradient buttons)

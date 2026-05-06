@@ -45,6 +45,6 @@
 }
 
 .cards .text p {
-    font-size: calc(var(--pico-font-size) * 0.75);
+    font-size: calc(var(--pico-font-size) * 0.85);
     color: var(--pico-muted-color);
 }
