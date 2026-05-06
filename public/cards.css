@@ -17,6 +17,8 @@
 }
 
 .cards .card-item {
+    position: relative;
+    overflow: hidden;
     background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -27,6 +29,28 @@
     text-align: start;
     max-width: 24rem;
     padding: 2rem;
+}
+
+.cards .card-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, #FFFFFF33, transparent);
+}
+
+.cards .card-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(180deg, #FFFFFF33, transparent, #FFFFFF0D);
 }
 
 .cards .card-item:hover {

@@ -76,7 +76,7 @@ main nav.sidebar .menu {
     position: sticky;
     display: block;
     width: 100%;
-    top: 0;
+    top: 5rem;
 }
 
 main nav.sidebar > .menu {
