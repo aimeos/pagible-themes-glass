@@ -28,10 +28,10 @@
 }
 
 .contact input, .contact textarea {
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--pico-contrast-border);
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: var(--pico-color);
     resize: vertical;
     font-size: var(--pico-font-size);
@@ -49,7 +49,7 @@
 .contact input:focus,
 .contact textarea:focus {
     border-color: var(--pico-primary);
-    box-shadow: 0 0 0 3px #06B6D41A;
+    box-shadow: 0 0 0 3px var(--pico-primary-background);
     outline: none;
 }
 
@@ -84,8 +84,8 @@
 }
 
 .contact button:disabled {
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
+    border: 1px solid var(--pico-contrast-border);
+    background: var(--pico-contrast-background);
     color: var(--pico-muted-color);
 }
 

@@ -15,13 +15,13 @@
     --pico-nav-link-spacing-horizontal: 0.625rem;
     --pico-color: #E2E8F0;
     --pico-background-color: #060A12;
-    --pico-text-selection-color: #06B6D433;
+    --pico-text-selection-color: #8AFFC433;
     --pico-muted-color: #94A3B8;
     --pico-muted-border-color: #FFFFFF14;
     --pico-muted-background-color: #FFFFFF0A;
     --pico-contrast: #F8FAFC;
     --pico-contrast-border: #FFFFFF1A;
-    --pico-contrast-background: #FFFFFF0A;
+    --pico-contrast-background: #FFFFFF0D;
     --pico-contrast-underline: var(--pico-contrast);
     --pico-contrast-hover: #FFFFFF;
     --pico-contrast-hover-border: #FFFFFF26;
@@ -29,12 +29,12 @@
     --pico-contrast-hover-underline: var(--pico-contrast-hover);
     --pico-contrast-focus: var(--pico-text-selection-color);
     --pico-contrast-inverse: #060A12;
-    --pico-primary: #06B6D4;
-    --pico-primary-background: #06B6D41A;
+    --pico-primary: #8AFFC4;
+    --pico-primary-background: #8AFFC41A;
     --pico-primary-border: var(--pico-primary);
     --pico-primary-underline: var(--pico-primary);
-    --pico-primary-hover: #22D3EE;
-    --pico-primary-hover-background: #22D3EE1A;
+    --pico-primary-hover: #B8FFD9;
+    --pico-primary-hover-background: #B8FFD91A;
     --pico-primary-hover-border: var(--pico-primary-hover);
     --pico-primary-hover-underline: var(--pico-primary-hover);
     --pico-primary-focus: var(--pico-text-selection-color);
@@ -63,12 +63,8 @@
     --pico-dropdown-box-shadow: 0 0.5rem 2rem -0.25rem #00000066;
     --pico-modal-overlay-background-color: #00000099;
     --pico-code-background-color: #0F172A;
-    --pico-code-color: #06B6D4;
+    --pico-code-color: #8AFFC4;
     --pico-border-radius: 1.25rem;
-    --glass-bg: #FFFFFF0D;
-    --glass-border: #FFFFFF1A;
-    --glass-blur: 20px;
-    --glass-bg-hover: #FFFFFF14;
 }
 
 * {
@@ -94,9 +90,9 @@ body::before {
     z-index: 0;
     contain: strict;
     background:
-        radial-gradient(ellipse 60% 50% at 15% 20%, #06B6D433, transparent),
+        radial-gradient(ellipse 60% 50% at 15% 20%, #8AFFC433, transparent),
         radial-gradient(ellipse 50% 60% at 80% 65%, #6366F126, transparent),
-        radial-gradient(ellipse 40% 40% at 50% 80%, #0EA5E91A, transparent);
+        radial-gradient(ellipse 40% 40% at 50% 80%, #34D39926, transparent);
 }
 
 body::after {
@@ -161,10 +157,10 @@ body > header {
 }
 
 body > header > nav {
-    background: #FFFFFF0A;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: 9999px;
     padding: 0.5rem 1.5rem;
     box-shadow: 0 0.5rem 2rem -0.5rem #00000033;
@@ -229,9 +225,9 @@ header nav details.dropdown > summary + ul.align {
     left: auto;
     right: auto;
     background: var(--pico-dropdown-background-color);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--pico-contrast-border);
 }
 
 header nav .brand {
@@ -332,10 +328,10 @@ header nav .menu a[role=button]:hover {
 }
 
 nav[aria-label="breadcrumb"] {
-    border-bottom: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--pico-contrast-border);
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 nav[aria-label="breadcrumb"] > ul {
@@ -374,18 +370,18 @@ nav[aria-label=breadcrumb] ul li a:hover {
 
 dialog > article {
     background: #0F172AE6;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     height: calc(100vh - 2rem);
     overflow: unset;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: calc(var(--pico-border-radius) * 1.5);
     box-shadow: var(--pico-box-shadow);
 }
 
 dialog header {
-    background: var(--glass-bg);
-    border-bottom: 1px solid var(--glass-border);
+    background: var(--pico-contrast-background);
+    border-bottom: 1px solid var(--pico-contrast-border);
     border-radius: calc(var(--pico-border-radius) * 1.5) calc(var(--pico-border-radius) * 1.5) 0 0;
 }
 
@@ -396,7 +392,7 @@ dialog form {
 
 dialog input,
 dialog button {
-    background-color: #0F172A;
+    background-color: var(--pico-code-background-color);
     color: var(--pico-contrast);
     appearance: none;
     box-shadow: none;
@@ -411,12 +407,12 @@ dialog button[type=reset] {
 }
 
 dialog button[type=reset]:hover {
-    background-color: var(--glass-bg-hover);
+    background-color: var(--pico-contrast-hover-background);
 }
 
 dialog input {
-    border: 1px solid var(--glass-border);
-    background-color: #0F172A;
+    border: 1px solid var(--pico-contrast-border);
+    background-color: var(--pico-code-background-color);
     font-size: var(--pico-font-size);
     display: block;
     width: 100%;
@@ -428,7 +424,7 @@ dialog input {
 
 dialog input:focus-visible {
     border: 1px solid var(--pico-primary);
-    box-shadow: 0 0 0 3px #06B6D41A;
+    box-shadow: 0 0 0 3px var(--pico-primary-background);
 }
 
 dialog input::-webkit-input-placeholder {
@@ -442,7 +438,7 @@ dialog.search .results {
 }
 
 dialog.search a.result-item {
-    border-inline-start: 2px solid var(--glass-border);
+    border-inline-start: 2px solid var(--pico-contrast-border);
     color: var(--pico-color);
     text-decoration: none;
     cursor: pointer;
@@ -456,14 +452,14 @@ dialog.search a.result-item {
 
 dialog.search a.result-item:hover {
     --pico-color: var(--pico-contrast);
-    background-color: var(--glass-bg-hover);
+    background-color: var(--pico-contrast-hover-background);
     border-inline-start-color: var(--pico-primary);
     color: var(--pico-contrast);
     opacity: 1;
 }
 
 dialog.search .result-title {
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--pico-contrast-border);
     display: block;
     font-weight: 500;
     padding-bottom: 0.25rem;
@@ -484,11 +480,11 @@ dialog.search .result-content b {
 }
 
 dialog.search .load-more {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: var(--pico-contrast);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--pico-contrast-border);
     cursor: pointer;
     display: block;
     font-size: calc(var(--pico-font-size) * 0.7);
@@ -499,7 +495,7 @@ dialog.search .load-more {
 }
 
 dialog.search .load-more:hover {
-    background-color: var(--glass-bg-hover);
+    background-color: var(--pico-contrast-hover-background);
 }
 
 dialog.search .load-more:disabled {
@@ -576,34 +572,34 @@ img {
     font-size: calc(var(--pico-font-size) * 0.8);
     font-weight: 500;
     letter-spacing: 0;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: 9999px;
     color: var(--pico-contrast);
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
-    background-color: var(--glass-bg-hover);
+    background-color: var(--pico-contrast-hover-background);
     color: var(--pico-contrast);
     opacity: 1;
 }
 
 .btn-primary,
 .btn:first-of-type {
-    background: linear-gradient(135deg, #06B6D4, #6366F1);
-    color: #FFFFFF;
-    border-color: #06B6D433;
-    box-shadow: 0 0 1.5rem -0.25rem #06B6D433;
+    background: linear-gradient(135deg, var(--pico-primary), var(--pico-secondary));
+    color: var(--pico-primary-inverse);
+    border-color: var(--pico-text-selection-color);
+    box-shadow: 0 0 1.5rem -0.25rem var(--pico-text-selection-color);
 }
 
 .btn-primary:hover,
 .btn:first-of-type:hover {
-    background: linear-gradient(135deg, #22D3EE, #818CF8);
-    color: #FFFFFF;
-    box-shadow: 0 0 2rem -0.25rem #06B6D44D;
+    background: linear-gradient(135deg, var(--pico-primary-hover), var(--pico-secondary-hover));
+    color: var(--pico-primary-inverse);
+    box-shadow: 0 0 2rem -0.25rem #8AFFC44D;
 }
 
 .btn::after {
@@ -634,11 +630,11 @@ img {
 
 
 pre:has(code[class*="language-"]) {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: calc(var(--pico-border-radius) * 1.5);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--pico-contrast-border);
     padding: 1rem;
 }
 
@@ -663,14 +659,14 @@ p code {
 
 
 footer.bottom {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-top: 1px solid var(--glass-border);
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--pico-contrast-border);
     color: var(--pico-muted-color);
     font-size: calc(var(--pico-font-size) * 0.65);
     font-weight: 300;
-    margin-top: 3rem;
+    margin: 0;
 }
 
 footer.bottom .container {
@@ -679,14 +675,7 @@ footer.bottom .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-footer.cms-content + footer.bottom {
-    margin-top: 0;
-}
-
-footer.cms-content + footer.bottom .container {
-    border-top: 1px solid var(--glass-border);
+    padding: 1.5rem 0;
 }
 
 footer.bottom .brand {
@@ -704,24 +693,26 @@ footer.bottom .brand img {
 }
 
 footer.cms-content {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-top: 1px solid var(--glass-border);
-    padding: 4rem 0 2rem;
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--pico-contrast-border);
+    padding: 2rem 0;
 }
 
 footer.cms-content .container {
     max-width: 1280px;
+    padding: 0;
+    padding-top: 2rem;
 }
 
 footer.cms-content .cards .card-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+    justify-self: normal;
 }
 
 footer.cms-content .cards .card-item {
-    background-color: #00000000;
+    background-color: transparent;
     border: none;
     box-shadow: none;
     border-radius: 0;
@@ -737,13 +728,17 @@ footer.cms-content .cards .card-item:hover {
 }
 
 footer.cms-content .cards .title {
-    color: var(--pico-muted-color);
+    color: var(--pico-contrast);
     font-size: calc(var(--pico-font-size) * 0.65);
+    font-weight: 700;
+    letter-spacing: 0.05em;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 footer.cms-content .cards .text {
     color: #FFFFFFCC;
+    font-size: calc(var(--pico-font-size) * 0.7);
     font-weight: 300;
 }
 
@@ -752,18 +747,16 @@ footer.cms-content .cards .text p {
     margin: 0;
 }
 
-footer.cms-content .cards .text a,
-footer.cms-content .cards .text a:visited {
-    color: #FFFFFFCC;
-    text-decoration: none;
-}
-
 footer.cms-content .cards .text a:hover {
-    color: var(--pico-primary);
+    color: var(--pico-contrast);
 }
 
-footer.cms-content .cards .text ul {
+footer.cms-content ul {
     padding-left: 0;
+    list-style: none;
+}
+
+footer.cms-content ul li {
     list-style: none;
 }
 
@@ -780,14 +773,11 @@ footer.cms-content .text {
 footer.cms-content a,
 footer.cms-content a:visited {
     color: #FFFFFFCC;
+    text-decoration: none;
 }
 
 footer.cms-content a:hover {
-    color: var(--pico-primary);
-}
-
-footer.cms-content :focus-visible {
-    outline-color: var(--pico-primary);
+    color: var(--pico-contrast);
 }
 
 @media screen and (min-width: 768px) {

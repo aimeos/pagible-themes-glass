@@ -1,6 +1,6 @@
 {
     "label": "Glass",
-    "description": "Dark glassmorphism design with frosted glass panels, backdrop blur effects, and vibrant cyan accents on a deep navy background",
+    "description": "Dark glassmorphism design with frosted glass panels, backdrop blur effects, and vibrant mint-green accents on a deep navy background",
     "maintainer": "Aimeos",
     "email": "info@aimeos.org",
     "website": "https://pagible.com",
@@ -43,7 +43,7 @@
                 },
                 "--pico-text-selection-color": {
                     "type": "color",
-                    "default": "#06B6D433"
+                    "default": "#8AFFC433"
                 },
                 "--pico-contrast": {
                     "type": "color",
@@ -59,19 +59,19 @@
                 },
                 "--pico-primary": {
                     "type": "color",
-                    "default": "#06B6D4"
+                    "default": "#8AFFC4"
                 },
                 "--pico-primary-background": {
                     "type": "color",
-                    "default": "#06B6D41A"
+                    "default": "#8AFFC41A"
                 },
                 "--pico-primary-hover": {
                     "type": "color",
-                    "default": "#22D3EE"
+                    "default": "#B8FFD9"
                 },
                 "--pico-primary-hover-background": {
                     "type": "color",
-                    "default": "#22D3EE1A"
+                    "default": "#B8FFD91A"
                 },
                 "--pico-secondary": {
                     "type": "color",

@@ -17,12 +17,12 @@
 }
 
 .cards .card-item {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: calc(var(--pico-border-radius) * 1.5);
-    box-shadow: 0 0.5rem 2rem -0.5rem #00000033, 0 0 0 0 #06B6D400;
+    box-shadow: 0 0.5rem 2rem -0.5rem #00000033, 0 0 0 0 transparent;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
     text-align: start;
     max-width: 24rem;
@@ -30,8 +30,8 @@
 }
 
 .cards .card-item:hover {
-    box-shadow: 0 0.75rem 2.5rem -0.25rem #00000066, 0 0 0 1px #FFFFFF0D;
-    border-color: #FFFFFF26;
+    box-shadow: 0 0.75rem 2.5rem -0.25rem #00000066, 0 0 0 1px var(--pico-contrast-background);
+    border-color: var(--pico-contrast-hover-border);
 }
 
 .cards .card-item img {

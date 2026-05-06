@@ -23,8 +23,8 @@
     width: fit-content;
     margin: 0 auto 3rem;
     padding: 0.25rem;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--pico-contrast-background);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: 9999px;
 }
 
@@ -55,7 +55,7 @@
     position: absolute;
     inset: 0.25rem;
     width: calc(50% - 0.25rem);
-    background: var(--glass-bg-hover);
+    background: var(--pico-contrast-hover-background);
     border-radius: 9999px;
     box-shadow: 0 1px 3px #0000001A;
     transition: transform 0.2s;
@@ -90,17 +90,17 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: var(--pico-border-radius);
     box-shadow: var(--pico-box-shadow);
 }
 
 .pricing .pricing-item.highlight {
-    background: linear-gradient(135deg, #06B6D41A, #6366F11A);
-    border-color: #06B6D433;
+    background: linear-gradient(135deg, var(--pico-primary-background), var(--pico-secondary-background));
+    border-color: var(--pico-text-selection-color);
     color: var(--pico-contrast);
     margin: -1rem 0;
     padding-top: 3rem;
@@ -112,8 +112,8 @@
     top: -0.75rem;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #06B6D4, #6366F1);
-    color: #FFFFFF;
+    background: linear-gradient(135deg, var(--pico-primary), var(--pico-secondary));
+    color: var(--pico-primary-inverse);
     border-radius: 9999px;
     font-weight: 500;
     font-size: 0.75rem;
@@ -134,11 +134,11 @@
     gap: 0.25rem;
     order: 3;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--pico-contrast-border);
 }
 
 .pricing .highlight .price {
-    border-bottom-color: #FFFFFF1A;
+    border-bottom-color: var(--pico-contrast-border);
 }
 
 .pricing .amount {
@@ -225,9 +225,9 @@
     width: 100%;
     text-align: center;
     padding: 0.75rem 1.5rem;
-    background: var(--glass-bg);
+    background: var(--pico-contrast-background);
     color: var(--pico-contrast);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: var(--pico-border-radius);
     text-decoration: none;
     font-weight: 500;
@@ -235,20 +235,20 @@
 }
 
 .pricing .btn:hover {
-    background-color: var(--glass-bg-hover);
+    background-color: var(--pico-contrast-hover-background);
     color: var(--pico-contrast);
     opacity: 1;
 }
 
 .pricing .highlight .btn {
-    background: linear-gradient(135deg, #06B6D4, #6366F1);
-    color: #FFFFFF;
-    border-color: #06B6D433;
-    box-shadow: 0 0 1.5rem -0.25rem #06B6D433;
+    background: linear-gradient(135deg, var(--pico-primary), var(--pico-secondary));
+    color: var(--pico-primary-inverse);
+    border-color: var(--pico-text-selection-color);
+    box-shadow: 0 0 1.5rem -0.25rem var(--pico-text-selection-color);
 }
 
 .pricing .highlight .btn:hover {
-    background: linear-gradient(135deg, #22D3EE, #818CF8);
-    color: #FFFFFF;
-    box-shadow: 0 0 2rem -0.25rem #06B6D44D;
+    background: linear-gradient(135deg, var(--pico-primary-hover), var(--pico-secondary-hover));
+    color: var(--pico-primary-inverse);
+    box-shadow: 0 0 2rem -0.25rem #8AFFC44D;
 }

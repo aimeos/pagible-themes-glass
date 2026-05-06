@@ -5,11 +5,11 @@
 nav.toc {
     display: block;
     padding: 1.5rem 2rem;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: calc(var(--pico-border-radius) * 1.5);
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 nav.toc > p {

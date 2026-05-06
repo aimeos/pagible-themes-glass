@@ -48,11 +48,11 @@
     font-size: calc(var(--pico-font-size) * 0.65);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: 9999px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .hero p {
@@ -78,10 +78,10 @@
 }
 
 .hero .second picture {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    background: var(--pico-contrast-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--pico-contrast-border);
     border-radius: calc(var(--pico-border-radius) * 1.5);
     box-shadow: var(--pico-box-shadow);
     width: fit-content;

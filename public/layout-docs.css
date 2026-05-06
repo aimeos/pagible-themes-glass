@@ -19,7 +19,7 @@ main .container {
 
 main nav.sidebar {
     background: var(--pico-background-color);
-    border-inline-end: 1px solid var(--glass-border);
+    border-inline-end: 1px solid var(--pico-contrast-border);
     transition: left 0.3s ease;
     position: absolute;
     z-index: 95;
