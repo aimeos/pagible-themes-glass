@@ -6,7 +6,7 @@ nav.toc {
     display: block;
     padding: 1.5rem 2rem;
     border: 1px solid var(--glass-border);
-    border-radius: calc(var(--pico-border-radius) * 2);
+    border-radius: calc(var(--pico-border-radius) * 1.5);
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));

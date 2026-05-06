@@ -43,7 +43,7 @@
 }
 
 .contact textarea {
-    border-radius: calc(var(--pico-border-radius) * 2);
+    border-radius: calc(var(--pico-border-radius) * 1.5);
 }
 
 .contact input:focus,

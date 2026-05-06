@@ -75,23 +75,23 @@
                 },
                 "--pico-secondary": {
                     "type": "color",
-                    "default": "#8B5CF6"
+                    "default": "#6366F1"
                 },
                 "--pico-secondary-background": {
                     "type": "color",
-                    "default": "#8B5CF61A"
+                    "default": "#6366F11A"
                 },
                 "--pico-secondary-hover": {
                     "type": "color",
-                    "default": "#A78BFA"
+                    "default": "#818CF8"
                 },
                 "--pico-secondary-hover-background": {
                     "type": "color",
-                    "default": "#A78BFA1A"
+                    "default": "#818CF81A"
                 },
                 "--pico-border-radius": {
                     "type": "string",
-                    "default": "12px"
+                    "default": "20px"
                 },
                 "--pico-nav-breadcrumb-divider": {
                     "type": "string",

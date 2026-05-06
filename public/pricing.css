@@ -99,7 +99,7 @@
 }
 
 .pricing .pricing-item.highlight {
-    background: linear-gradient(135deg, #06B6D41A, #8B5CF61A);
+    background: linear-gradient(135deg, #06B6D41A, #6366F11A);
     border-color: #06B6D433;
     color: var(--pico-contrast);
     margin: -1rem 0;
@@ -112,7 +112,7 @@
     top: -0.75rem;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #06B6D4, #8B5CF6);
+    background: linear-gradient(135deg, #06B6D4, #6366F1);
     color: #FFFFFF;
     border-radius: 9999px;
     font-weight: 500;
@@ -241,12 +241,14 @@
 }
 
 .pricing .highlight .btn {
-    background: linear-gradient(135deg, #06B6D4, #8B5CF6);
+    background: linear-gradient(135deg, #06B6D4, #6366F1);
     color: #FFFFFF;
     border-color: #06B6D433;
+    box-shadow: 0 0 1.5rem -0.25rem #06B6D433;
 }
 
 .pricing .highlight .btn:hover {
-    background: linear-gradient(135deg, #22D3EE, #A78BFA);
+    background: linear-gradient(135deg, #22D3EE, #818CF8);
     color: #FFFFFF;
+    box-shadow: 0 0 2rem -0.25rem #06B6D44D;
 }

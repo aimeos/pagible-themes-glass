@@ -25,16 +25,16 @@
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--glass-border);
-    border-radius: calc(var(--pico-border-radius) * 1.5);
-    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    border-radius: calc(var(--pico-border-radius) * 1.25);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
     padding: 0.5rem;
     display: block;
     height: 100%;
 }
 
 .blog .blog-item:hover {
-    box-shadow: 0 0.5rem 2rem -0.5rem #00000033;
-    border-color: var(--pico-contrast-hover-border);
+    box-shadow: 0 0.75rem 2.5rem -0.5rem #00000033;
+    border-color: #FFFFFF26;
 }
 
 .blog img {
