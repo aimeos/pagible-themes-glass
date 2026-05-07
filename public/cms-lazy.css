@@ -202,7 +202,7 @@ footer.cms-content {
 
 footer.cms-content .container {
     max-width: 1152px;
-    padding: 0;
+    padding: 0 1rem;
     padding-top: 2rem;
 }
 
@@ -298,7 +298,7 @@ footer.bottom .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
 }
 
 footer.bottom .brand {

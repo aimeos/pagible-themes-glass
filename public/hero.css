@@ -93,7 +93,10 @@
 
 .hero .second img {
     border-radius: var(--pico-border-radius);
+    aspect-ratio: 3 / 2;
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 @media screen and (min-width: 768px) {

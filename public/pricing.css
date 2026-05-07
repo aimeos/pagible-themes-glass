@@ -4,24 +4,24 @@
 
 .pricing .title {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .pricing .title ~ .subtitle {
-    margin-top: -2rem;
+    margin-top: -1rem;
 }
 
 .pricing .subtitle {
     text-align: center;
     color: var(--pico-muted-color);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .pricing .pricing-toggle {
     position: relative;
     display: flex;
     width: fit-content;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     padding: 0.25rem;
     background: var(--pico-contrast-background);
     border: 1px solid var(--pico-contrast-border);
@@ -70,16 +70,16 @@
     grid-template-columns: 1fr;
     align-items: stretch;
     padding: 1rem 0;
-    gap: 2rem;
+    gap: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
     .pricing .pricing-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
     .pricing .pricing-list {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -90,9 +90,9 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    background: var(--pico-contrast-background);
+    margin: 0 auto;
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: var(--pico-contrast-background);
     border: 1px solid var(--pico-contrast-border);
     border-top: 2px solid var(--pico-contrast-hover-border);
     border-radius: var(--pico-border-radius);
@@ -125,7 +125,6 @@
     background: linear-gradient(135deg, var(--pico-primary-background), var(--pico-secondary-background));
     border-color: var(--pico-text-selection-color);
     color: var(--pico-contrast);
-    margin: -1rem 0;
     padding-top: 3rem;
     padding-bottom: 3rem;
 }

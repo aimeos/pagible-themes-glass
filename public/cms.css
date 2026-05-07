@@ -25,12 +25,12 @@
     --pico-contrast-underline: var(--pico-contrast);
     --pico-contrast-hover: #FFFFFF;
     --pico-contrast-hover-border: #FFFFFF60;
-    --pico-contrast-hover-background: #FFFFFF14;
+    --pico-contrast-hover-background: #FFFFFF30;
     --pico-contrast-hover-underline: var(--pico-contrast-hover);
     --pico-contrast-focus: var(--pico-text-selection-color);
     --pico-contrast-inverse: #060A12;
     --pico-primary: #8AFFC4;
-    --pico-primary-background: #8AFFC440;
+    --pico-primary-background: #8AFFC450;
     --pico-primary-border: var(--pico-primary);
     --pico-primary-underline: var(--pico-primary);
     --pico-primary-hover: #B8FFD9;
@@ -40,7 +40,7 @@
     --pico-primary-focus: var(--pico-text-selection-color);
     --pico-primary-inverse: #060A12;
     --pico-secondary: #6366F1;
-    --pico-secondary-background: #6366F140;
+    --pico-secondary-background: #6366F150;
     --pico-secondary-border: var(--pico-secondary);
     --pico-secondary-underline: var(--pico-secondary);
     --pico-secondary-hover: #818CF8;
@@ -154,7 +154,7 @@ nav li :where(a,[role=link]) {
 body > header {
     max-width: 1152px;
     border-bottom: none;
-    padding: 1rem 2rem;
+    padding: 1rem;
     position: fixed;
     margin: 0 auto;
     z-index: 10;

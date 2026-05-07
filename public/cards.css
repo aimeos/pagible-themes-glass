@@ -41,7 +41,7 @@
 .cards .title {
     font-size: var(--pico-font-size);
     margin: 1rem 0 0.75rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .cards .text p {
