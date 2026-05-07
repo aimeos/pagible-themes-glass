@@ -78,9 +78,8 @@
 }
 
 .hero .second picture {
-    background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: var(--pico-contrast-background);
     border: 1px solid var(--pico-contrast-border);
     border-top: 2px solid var(--pico-contrast-hover-border);
     border-radius: calc(var(--pico-border-radius) * 1.5);
@@ -93,10 +92,7 @@
 
 .hero .second img {
     border-radius: var(--pico-border-radius);
-    aspect-ratio: 3 / 2;
     display: block;
-    width: 100%;
-    height: auto;
 }
 
 @media screen and (min-width: 768px) {
