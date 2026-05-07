@@ -6,6 +6,7 @@
     position: relative;
     overflow: hidden;
     border: 1px solid var(--pico-contrast-border);
+    border-top: 2px solid var(--pico-contrast-hover-border);
     border-radius: calc(var(--pico-border-radius) * 1.5);
     margin-bottom: 0.75rem;
     padding: 1.25rem 1.5rem;

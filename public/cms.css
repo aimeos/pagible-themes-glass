@@ -20,17 +20,17 @@
     --pico-muted-border-color: #FFFFFF14;
     --pico-muted-background-color: #FFFFFF0A;
     --pico-contrast: #F8FAFC;
-    --pico-contrast-border: #FFFFFF1A;
-    --pico-contrast-background: #FFFFFF0D;
+    --pico-contrast-border: #FFFFFF40;
+    --pico-contrast-background: #FFFFFF18;
     --pico-contrast-underline: var(--pico-contrast);
     --pico-contrast-hover: #FFFFFF;
-    --pico-contrast-hover-border: #FFFFFF26;
+    --pico-contrast-hover-border: #FFFFFF60;
     --pico-contrast-hover-background: #FFFFFF14;
     --pico-contrast-hover-underline: var(--pico-contrast-hover);
     --pico-contrast-focus: var(--pico-text-selection-color);
     --pico-contrast-inverse: #060A12;
     --pico-primary: #8AFFC4;
-    --pico-primary-background: #8AFFC41A;
+    --pico-primary-background: #8AFFC440;
     --pico-primary-border: var(--pico-primary);
     --pico-primary-underline: var(--pico-primary);
     --pico-primary-hover: #B8FFD9;
@@ -40,7 +40,7 @@
     --pico-primary-focus: var(--pico-text-selection-color);
     --pico-primary-inverse: #060A12;
     --pico-secondary: #6366F1;
-    --pico-secondary-background: #6366F11A;
+    --pico-secondary-background: #6366F140;
     --pico-secondary-border: var(--pico-secondary);
     --pico-secondary-underline: var(--pico-secondary);
     --pico-secondary-hover: #818CF8;
@@ -67,6 +67,18 @@
     --pico-border-radius: 1.25rem;
 }
 
+@media (min-width: 768px) {
+    :host, :root {
+        --pico-font-size: 1.125rem !important;
+    }
+}
+
+@media (min-width: 768px) {
+    :host, :root {
+        --pico-font-size: 1.0625rem !important;
+    }
+}
+
 * {
   scrollbar-color: var(--pico-contrast-border) var(--pico-background-color);
 }
@@ -89,7 +101,7 @@ body::before {
     position: fixed;
     pointer-events: none;
     background:
-        radial-gradient(circle 60vw at 15% 75%, var(--pico-secondary-background), transparent),
+        radial-gradient(circle 75vw at 15% 50%, var(--pico-secondary-background), transparent),
         radial-gradient(circle 35vw at 95% 50%, var(--pico-primary-background), transparent);
 }
 
@@ -98,8 +110,8 @@ body::after {
     content: "";
     position: fixed;
     pointer-events: none;
-    background: linear-gradient(135deg, transparent 50%, var(--pico-primary-background) 60%, transparent 80%);
-    mask-image: linear-gradient(to bottom, #000000 -15%, #00000000 100%);
+    background: linear-gradient(135deg, transparent 40%, var(--pico-primary-background) 60%, transparent 80%);
+    mask-image: linear-gradient(to bottom, #000000 0%, #00000000 100%);
 }
 
 body > * {
@@ -112,13 +124,13 @@ body > * {
     border-radius: var(--pico-border-radius);
 }
 
-:where(a:not([role=button])), [role=link],
-:where(a:not([role=button]):visited), [role=link]:visited {
+:where(a:not([role=button]):not([role=menuitem])),
+:where(a:not([role=button]):not([role=menuitem]):visited) {
     --pico-color: var(--pico-primary);
     --pico-underline: var(--pico-primary);
 }
 
-:where(a:not([role=button]):hover), [role=link]:hover {
+:where(a:not([role=button]):not([role=menuitem]):hover) {
     --pico-color: var(--pico-primary-hover);
     --pico-underline: var(--pico-primary-hover);
 }
@@ -140,7 +152,7 @@ nav li :where(a,[role=link]) {
 }
 
 body > header {
-    max-width: 1280px;
+    max-width: 1152px;
     border-bottom: none;
     padding: 1rem 2rem;
     position: fixed;
@@ -152,13 +164,12 @@ body > header {
 }
 
 body > header > nav {
-    background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0.5rem 2rem -0.5rem #00000033;
+    background: var(--pico-contrast-background);
     border: 1px solid var(--pico-contrast-border);
     border-radius: 9999px;
     padding: 0.5rem 1.5rem;
-    box-shadow: 0 0.5rem 2rem -0.5rem #00000033;
 }
 
 header nav ol,
@@ -207,7 +218,7 @@ header nav details summary::-webkit-details-marker {
 }
 
 header nav details.dropdown > summary::after {
-    background-size: var(--pico-font-size) auto;
+    background-size: calc(var(--pico-font-size) *0.75) auto;
     float: inline-end;
 }
 
@@ -221,7 +232,6 @@ header nav details.dropdown > summary + ul.align {
     right: auto;
     background: var(--pico-dropdown-background-color);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--pico-contrast-border);
 }
 
@@ -295,7 +305,6 @@ header nav .menu a[role=button]:hover {
         border-radius: 0;
         border: none;
         backdrop-filter: none;
-        -webkit-backdrop-filter: none;
         box-shadow: none;
         top: 0;
         left: 0;
@@ -329,7 +338,6 @@ header nav .menu a[role=button]:hover {
         position: relative;
         background: none;
         backdrop-filter: none;
-        -webkit-backdrop-filter: none;
         border: none;
         box-shadow: none;
         padding: 0;
@@ -345,12 +353,11 @@ nav[aria-label="breadcrumb"] {
     border-bottom: 1px solid var(--pico-contrast-border);
     background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 nav[aria-label="breadcrumb"] > ul {
     text-align: center;
-    max-width: 1200px;
+    max-width: 1152px;
     margin: auto;
     width: 100%;
 }
@@ -383,7 +390,7 @@ nav[aria-label=breadcrumb] ul li a:hover {
 
 
 .container {
-    max-width: 1200px !important;
+    max-width: 1152px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -449,7 +456,6 @@ img {
     color: var(--pico-contrast);
     background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 

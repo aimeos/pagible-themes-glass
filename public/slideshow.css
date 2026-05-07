@@ -7,6 +7,7 @@
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
 	border: 1px solid var(--pico-contrast-border);
+	border-top: 2px solid var(--pico-contrast-hover-border);
 	border-radius: calc(var(--pico-border-radius) * 1.5);
 	box-shadow: var(--pico-box-shadow);
 	overflow: hidden;

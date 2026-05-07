@@ -10,6 +10,7 @@ dialog > article {
     height: calc(100vh - 2rem);
     overflow: unset;
     border: 1px solid var(--pico-contrast-border);
+    border-top: 2px solid var(--pico-contrast-hover-border);
     border-radius: calc(var(--pico-border-radius) * 1.5);
     box-shadow: var(--pico-box-shadow);
 }
@@ -140,7 +141,7 @@ dialog.search .load-more:disabled {
 
 @media (min-width: 1024px) {
     dialog>article {
-        max-width: 950px;
+        max-width: 900px;
     }
 }
 
@@ -200,14 +201,15 @@ footer.cms-content {
 }
 
 footer.cms-content .container {
-    max-width: 1280px;
+    max-width: 1152px;
     padding: 0;
     padding-top: 2rem;
 }
 
 footer.cms-content .cards .card-list {
     grid-template-columns: repeat(2, 1fr);
-    justify-self: normal;
+    justify-self: auto;
+    max-width: 100%;
 }
 
 footer.cms-content .cards .card-item {
@@ -291,7 +293,7 @@ footer.bottom {
 }
 
 footer.bottom .container {
-    max-width: 1280px;
+    max-width: 1152px;
     margin: auto;
     display: flex;
     justify-content: space-between;
