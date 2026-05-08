@@ -303,11 +303,6 @@ header nav .menu a[role=button]:hover {
         width: 100%;
     }
 
-    header nav.small .menu a,
-    header nav.small .menu details > summary {
-        font-size: var(--pico-font-size);
-    }
-
     header nav.small .menu details > summary + ul.align {
         position: relative;
         backdrop-filter: none;
