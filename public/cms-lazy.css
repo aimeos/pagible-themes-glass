@@ -258,7 +258,6 @@ footer.cms-content ul {
 
 footer.cms-content ul li {
     list-style: none;
-    line-height: 2;
 }
 
 footer.cms-content .heading h1,
@@ -275,6 +274,8 @@ footer.cms-content a,
 footer.cms-content a:visited {
     color: #FFFFFFCC;
     text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 0;
 }
 
 footer.cms-content a:hover {
@@ -284,7 +285,6 @@ footer.cms-content a:hover {
 footer.bottom {
     background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid var(--pico-contrast-border);
     color: var(--pico-muted-color);
     font-size: calc(var(--pico-font-size) * 0.75);

@@ -191,24 +191,24 @@ header nav > ul > li:last-of-type a {
     color: var(--pico-primary-inverse);
     background-color: var(--pico-primary);
     border-radius: 9999px;
-    padding: 0.4rem 1rem;
+    padding: 0.7rem 1rem;
     text-wrap: nowrap;
 }
 
 header nav a,
-header nav details.dropdown > summary {
+header nav details > summary {
     display: flex;
     align-items: center;
     list-style: none;
     cursor: pointer;
-    padding: 0.4rem 0.5rem;
+    padding: 0.7rem 0.5rem;
     color: var(--pico-color);
     font-size: calc(var(--pico-font-size) * 0.75);
     transition: color 0.15s ease;
 }
 
 header nav a,
-header nav details.dropdown {
+header nav details {
     text-decoration: none;
 }
 
@@ -217,7 +217,7 @@ header nav details summary::-webkit-details-marker {
     display: none;
 }
 
-header nav details.dropdown > summary::after {
+header nav details > summary::after {
     background-size: calc(var(--pico-font-size) *0.75) auto;
     float: inline-end;
 }
@@ -226,13 +226,13 @@ header nav details[open] summary::after {
     transform: rotate(0.5turn) translateX(-0.2rem);
 }
 
-header nav details.dropdown > summary + ul.align {
+header nav details > summary + ul.align {
+    background: var(--pico-dropdown-background-color);
+    border: 1px solid var(--pico-contrast-border);
+    backdrop-filter: blur(20px);
     width: auto;
     left: auto;
     right: auto;
-    background: var(--pico-dropdown-background-color);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--pico-contrast-border);
 }
 
 header nav .brand {
@@ -241,20 +241,20 @@ header nav .brand {
 
 header nav .brand a,
 header nav .brand img {
-    display: flex;
     align-items: center;
-    height: 40px;
+    display: flex;
+    height: 44px;
     padding: 0;
     margin: 0;
 }
 
 header nav .brand a {
-    font-family: var(--pico-font-family-display);
     font-weight: 500;
+    font-family: var(--pico-font-family-display);
     font-size: var(--pico-font-size);
     letter-spacing: -0.02em;
-    color: var(--pico-contrast);
     text-decoration: none;
+    color: var(--pico-contrast);
 }
 
 header nav .menu-open,
@@ -269,7 +269,7 @@ header nav .menu-close button,
 header nav .sidebar-open button,
 header nav .sidebar-close button {
     color: var(--pico-contrast);
-    padding: 0.75rem;
+    padding: 0.6rem;
     background: none;
     border: none;
 }
@@ -324,17 +324,16 @@ header nav .menu a[role=button]:hover {
     }
 
     header nav .menu li {
-        padding: 0.75rem 2rem;
+        padding: 0 2rem;
         width: 100%;
     }
 
     header nav.small .menu a,
-    header nav.small .menu details.dropdown > summary {
+    header nav.small .menu details > summary {
         font-size: var(--pico-font-size);
-        padding: 0.5rem 0;
     }
 
-    header nav.small .menu details.dropdown > summary + ul.align {
+    header nav.small .menu details > summary + ul.align {
         position: relative;
         background: none;
         backdrop-filter: none;
@@ -342,10 +341,6 @@ header nav .menu a[role=button]:hover {
         box-shadow: none;
         padding: 0;
         padding-inline-start: 1rem;
-    }
-
-    body > header > nav {
-        padding: 0.5rem 1rem;
     }
 }
 
