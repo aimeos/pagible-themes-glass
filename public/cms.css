@@ -124,17 +124,6 @@ body > * {
     border-radius: var(--pico-border-radius);
 }
 
-:where(a:not([role=button])),
-:where(a:not([role=button]):visited) {
-    --pico-color: var(--pico-primary);
-    --pico-underline: var(--pico-primary);
-}
-
-:where(a:not([role=button]):hover) {
-    --pico-color: var(--pico-primary-hover);
-    --pico-underline: var(--pico-primary-hover);
-}
-
 .skip-link {
     position: absolute;
     top: -100%;
@@ -196,7 +185,6 @@ header nav details > summary {
     list-style: none;
     cursor: pointer;
     padding: 0.7rem 0.5rem;
-    color: var(--pico-primary);
     font-size: calc(var(--pico-font-size) * 0.75);
     transition: color 0.15s ease;
     text-decoration: none;
@@ -322,10 +310,10 @@ header nav .menu a[role=button]:hover {
 
     header nav.small .menu details > summary + ul.align {
         position: relative;
-        background: none;
         backdrop-filter: none;
-        border: none;
+        background: none;
         box-shadow: none;
+        border: none;
         padding: 0;
     }
 
