@@ -274,7 +274,7 @@ footer.cms-content a:visited {
     color: #FFFFFFCC;
     text-decoration: none;
     display: inline-block;
-    padding: 0.5rem 0;
+    padding: 0.65rem 0;
 }
 
 footer.cms-content a:hover {
@@ -282,10 +282,10 @@ footer.cms-content a:hover {
 }
 
 footer.bottom {
-    background: var(--pico-contrast-background);
     backdrop-filter: blur(20px);
-    border-top: 1px solid var(--pico-contrast-border);
     color: var(--pico-muted-color);
+    background: var(--pico-contrast-background);
+    border-top: 1px solid var(--pico-contrast-border);
     font-size: calc(var(--pico-font-size) * 0.75);
     font-weight: 300;
     margin: 0;
@@ -297,7 +297,7 @@ footer.bottom .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
 }
 
 footer.bottom .brand {
