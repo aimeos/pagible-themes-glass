@@ -90,7 +90,7 @@
 body {
     font-family: var(--pico-font-family-sans-serif);
     background-color: var(--pico-background-color);
-    padding-top: 5rem;
+    padding-top: 6rem;
     position: relative;
     color: var(--pico-color);
 }
