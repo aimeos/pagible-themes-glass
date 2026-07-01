@@ -16,14 +16,17 @@
 .testimonial .testimonial-item {
     position: relative;
     overflow: hidden;
-    margin: 0;
-    padding: 2rem;
-    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: var(--pico-contrast-background);
     border: 1px solid var(--pico-contrast-border);
     border-top: 2px solid var(--pico-contrast-hover-border);
     border-radius: calc(var(--pico-border-radius) * 1.25);
     box-shadow: 0 0.5rem 2rem -0.5rem #00000033;
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    margin: 0;
 }
 
 .testimonial .testimonial-item::before {
@@ -49,13 +52,11 @@
 }
 
 .testimonial blockquote::before {
-    content: '"';
-    display: block;
-    color: var(--pico-primary);
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 0.8;
-    margin-bottom: 0.75rem;
+    content: '“';
+}
+
+.testimonial blockquote::after {
+    content: '”';
 }
 
 .testimonial blockquote p:last-child {
