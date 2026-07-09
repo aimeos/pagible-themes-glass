@@ -27,7 +27,9 @@ class GlassDemo extends AbstractDemo
      */
     private const PHOTOS = [
         'audit' => ['photo-1454165804606-c3d57bc86b40', 'Change audit', 'Workspace with charts and notes for reviewing metric changes'],
+        'approval' => ['photo-1551836022-d5d88e9218df', 'Metric approval', 'Analytics owner reviewing an approved metric record'],
         'board' => ['photo-1551434678-e076c223a692', 'Planning session', 'Team reviewing analytics priorities on a glass wall'],
+        'changes' => ['photo-1556075798-4825dfaaf498', 'Metric change history', 'Version history review for governed metric changes'],
         'city' => ['photo-1494526585095-c41746248156', 'Market model', 'City grid at dusk representing market coverage'],
         'cloud' => ['photo-1451187580459-43490279c0fa', 'Cloud network', 'Global network of connected analytics systems'],
         'control' => ['photo-1504384308090-c894fdcc538d', 'Operations dashboard', 'Analytics dashboard with live business metrics'],
@@ -35,13 +37,13 @@ class GlassDemo extends AbstractDemo
         'data' => ['photo-1551288049-bebda4e38f71', 'Metric workspace', 'Data workspace with dashboards and charts'],
         'finance' => ['photo-1460925895917-afdab827c52f', 'Revenue dashboard', 'Laptop showing revenue and performance charts'],
         'infra' => ['photo-1558494949-ef010cbdcc31', 'Cloud infrastructure', 'Server infrastructure for real-time analytics'],
+        'lineage' => ['photo-1498050108023-c5249f4df0852', 'Source lineage', 'Code workspace showing a documented data source contract'],
         'meeting' => ['photo-1521737711867-e3b97375f902', 'Executive review', 'Business team reviewing quarterly metrics'],
         'owner' => ['photo-1552664730-d307ca884978', 'Metric owner review', 'Team reviewing ownership decisions in a planning session'],
         'pipeline' => ['photo-1516321318423-f06f85e504b3', 'Data pipeline', 'Modern workspace with connected screens'],
         'security' => ['photo-1563986768609-322da13575f3', 'Access control review', 'Security controls for private analytics workspaces'],
     ];
 
-    private string $audioFile;
     private string $briefFile;
     private string $element;
     private string $logoFile;
@@ -155,9 +157,9 @@ class GlassDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'What belongs in the metric record',
                 'cards' => [
-                    ['title' => 'A named owner', 'text' => 'The person or team that can approve a definition change and explain the result in plain language.', 'file' => ['id' => $this->img( 'owner' ), 'type' => 'file']],
-                    ['title' => 'A source contract', 'text' => 'The table, stream, or application event that feeds the metric, with expected update timing.', 'file' => ['id' => $this->img( 'pipeline' ), 'type' => 'file']],
-                    ['title' => 'A change trail', 'text' => 'Every material definition change, visible beside the metric instead of buried in a ticket.', 'file' => ['id' => $this->img( 'audit' ), 'type' => 'file']],
+                    ['title' => 'A named owner', 'text' => 'The person or team that can approve a definition change and explain the result in plain language.', 'file' => ['id' => $this->img( 'approval' ), 'type' => 'file']],
+                    ['title' => 'A source contract', 'text' => 'The table, stream, or application event that feeds the metric, with expected update timing.', 'file' => ['id' => $this->img( 'lineage' ), 'type' => 'file']],
+                    ['title' => 'A change trail', 'text' => 'Every material definition change, visible beside the metric instead of buried in a ticket.', 'file' => ['id' => $this->img( 'changes' ), 'type' => 'file']],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
@@ -192,9 +194,6 @@ class GlassDemo extends AbstractDemo
             ),
             ['id' => Utils::uid(), 'type' => 'video', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->videoFile(), 'type' => 'file'],
-            ]],
-            ['id' => Utils::uid(), 'type' => 'audio', 'group' => 'main', 'data' => [
-                'file' => ['id' => $this->audioFile(), 'type' => 'file'],
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
                 'title' => 'Freshness tiers',
@@ -248,9 +247,6 @@ class GlassDemo extends AbstractDemo
                     ['Forecast coverage', 'Trial activation and sales-assist usage', 'Which forecast gaps have product evidence behind them?'],
                     ['Discounting', 'Seat utilization and plan fit', 'Are discounts masking accounts that need a different package?'],
                 ],
-            ]],
-            ['id' => Utils::uid(), 'type' => 'html', 'group' => 'main', 'data' => [
-                'text' => '<aside style="padding:1.25rem;border:1px solid var(--pico-contrast-border);border-radius:var(--pico-border-radius);background:var(--pico-contrast-background)">SignalLake keeps the finance-approved number intact, then places product usage, account health, and cohort movement beside it.</aside>',
             ]],
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
                 'text' => "The important boundary is clear: finance owns the recognized number, while product and customer teams explain movement around it. SignalLake keeps those views linked without letting one overwrite the other.",
@@ -505,42 +501,6 @@ class GlassDemo extends AbstractDemo
 
 
     /**
-     * Creates the shared demo audio file and returns its ID.
-     *
-     * @return string File ID
-     */
-    protected function audioFile() : string
-    {
-        if( !isset( $this->audioFile ) )
-        {
-            $data = [
-                'mime' => 'audio/mpeg',
-                'lang' => 'en',
-                'name' => 'SignalLake operator briefing',
-                'path' => 'https://download.samplelib.com/mp3/sample-12s.mp3',
-                'previews' => [],
-                'description' => ['en' => 'Short audio briefing for analytics operations teams'],
-            ];
-
-            $file = File::forceCreate( $data + ['editor' => 'demo'] );
-
-            $version = $file->versions()->forceCreate( [
-                'lang' => 'en',
-                'data' => $data,
-                'published' => true,
-                'editor' => 'demo',
-            ] );
-
-            $file->forceFill( ['latest_id' => $version->id] )->saveQuietly();
-            $file->publish( $version );
-            $this->audioFile = (string) $file->refresh()->id;
-        }
-
-        return $this->audioFile;
-    }
-
-
-    /**
      * Creates a downloadable demo PDF and returns its ID.
      *
      * @return string File ID
@@ -588,7 +548,7 @@ class GlassDemo extends AbstractDemo
             $cards = [
                 ['title' => 'Product', 'text' => "- [Platform](/)\n- [Pricing](/#pricing)\n- [Docs](/docs)"],
                 ['title' => 'Resources', 'text' => "- [Field Notes](/blog)\n- [Metric contracts](/docs)\n- [Revenue model guide](/one-revenue-number-for-finance-and-product)"],
-                ['title' => 'Company', 'text' => "- Security review\n- Data residency\n- hello@signallake.test"],
+                ['title' => 'Company', 'text' => '- hello@signallake.test'],
             ];
 
             $element = Element::forceCreate( [
@@ -1001,14 +961,14 @@ SVG;
     {
         if( !isset( $this->videoFile ) )
         {
-            $poster = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80&fm=jpg&fit=crop';
+            $poster = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1500&q=80&fm=jpg&fit=crop';
 
             $data = [
                 'mime' => 'video/mp4',
                 'lang' => 'en',
                 'name' => 'SignalLake dashboard walkthrough',
                 'path' => 'https://media.w3.org/2010/05/sintel/trailer.mp4',
-                'previews' => ['500' => $poster],
+                'previews' => ['1500' => $poster],
                 'description' => ['en' => 'Short walkthrough video for a live analytics dashboard'],
             ];
 
