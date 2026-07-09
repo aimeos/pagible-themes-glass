@@ -164,7 +164,7 @@ header nav > ul:not(.menu) > li {
     padding: 0;
 }
 
-header nav > ul > li:last-of-type a {
+header nav > ul > li:last-of-type:not(:has(details)) a {
     color: var(--pico-primary-inverse);
     background-color: var(--pico-primary);
     border-radius: 9999px;
@@ -215,7 +215,10 @@ header nav ul.menu > li:last-of-type > a:active {
     color: var(--pico-primary-inverse);
 }
 
-header nav details summary::marker,
+header nav details summary::marker {
+    content: "";
+}
+
 header nav details summary::-webkit-details-marker {
     display: none;
 }
