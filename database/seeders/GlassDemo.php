@@ -129,14 +129,6 @@ class GlassDemo extends AbstractDemo
                     ['Action', 'Read-only slide', 'Follow-up assigned from the metric detail'],
                 ],
             ]],
-            ['id' => Utils::uid(), 'type' => 'questions', 'group' => 'main', 'data' => [
-                'title' => 'Where trust usually breaks',
-                'items' => [
-                    ['title' => 'The cutoff is unclear', 'text' => 'A metric says weekly revenue, but the room cannot tell whether late invoices, refunds, or usage corrections landed before the review started.'],
-                    ['title' => 'The owner is missing', 'text' => 'People debate the number because nobody in the room can approve the definition or explain why it changed.'],
-                    ['title' => 'The exception has no next step', 'text' => 'A chart points to a problem, but the dashboard does not connect the metric to an assigned follow-up.'],
-                ],
-            ]],
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
                 'text' => "Dashboards earn trust when people can answer three questions quickly: where did this number come from, when did it change, and who can explain it?\n\nA small review ritual helps: start with stale or disputed metrics, confirm the owner, record the decision, and only then move to trend discussion. SignalLake puts those answers in the same view as the metric. That keeps weekly reviews from turning into archaeology.",
             ]],
@@ -213,14 +205,6 @@ class GlassDemo extends AbstractDemo
                     ['Pipeline and campaign spend', '1 hour', 'Keep visible, but mark decisions that depend on it'],
                     ['Revenue recognition', '24 hours', 'Hold published board views until finance confirms the load'],
                     ['Monthly reporting', '3 days', 'Show close status and expected finalization date'],
-                ],
-            ]],
-            ['id' => Utils::uid(), 'type' => 'questions', 'group' => 'main', 'data' => [
-                'title' => 'Freshness questions worth asking',
-                'items' => [
-                    ['title' => 'Can the source be late without failing?', 'text' => 'Batch jobs often finish cleanly after a source system missed its own export window. SignalLake tracks both source and transform timing.'],
-                    ['title' => 'Does the metric age at the same speed for every team?', 'text' => 'A sales activity count may need hourly updates. Monthly recurring revenue may not. Freshness should match the decision cadence.'],
-                    ['title' => 'Can readers see stale data before they act?', 'text' => 'SignalLake marks stale metrics in the dashboard and exposes the freshness rule behind the warning.'],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
@@ -377,14 +361,6 @@ class GlassDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
                 'text' => "Publishing a dashboard does not copy data into a presentation layer. SignalLake keeps the dashboard connected to governed metrics, then applies permissions when a reader opens the page.\n\nUse scheduled reviews for board packs and live links for operating reviews. Before publishing, check that every visible metric has an owner, an approved source, a freshness policy, and a reader-facing stale-state message.",
             ]],
-            ['id' => Utils::uid(), 'type' => 'questions', 'group' => 'main', 'data' => [
-                'title' => 'Before you publish',
-                'items' => [
-                    ['title' => 'Is the audience named?', 'text' => 'Pick a concrete audience such as executive review, revenue operations, or board packet. Permissions and export rules follow that choice.'],
-                    ['title' => 'Are draft metrics hidden?', 'text' => 'Keep draft metrics visible to editors, but exclude them from published dashboards unless the audience has approved them.'],
-                    ['title' => 'What happens when data is stale?', 'text' => 'Choose whether the dashboard warns, hides a metric, or blocks publication when a source misses its freshness rule.'],
-                ],
-            ]],
             ['id' => Utils::uid(), 'type' => 'file', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->briefFile(), 'type' => 'file'],
             ]],
@@ -433,14 +409,6 @@ class GlassDemo extends AbstractDemo
                     ['approval', 'Separates draft work from finance-approved reporting', 'Finance'],
                     ['policy', 'Controls where the metric can be published', 'Workspace Admin'],
                     ['description', 'Explains the number without requiring SQL knowledge', 'Metric Owner'],
-                ],
-            ]],
-            ['id' => Utils::uid(), 'type' => 'questions', 'group' => 'main', 'data' => [
-                'title' => 'Review questions',
-                'items' => [
-                    ['title' => 'Can a reader explain the grain?', 'text' => 'If the dashboard mixes account-month, user-day, and invoice-line metrics, spell out the grain before readers compare values.'],
-                    ['title' => 'Who approves a definition change?', 'text' => 'Make the approver explicit before the first dashboard ships. Otherwise the approval process will be invented during an incident.'],
-                    ['title' => 'Where may this metric appear?', 'text' => 'Use the publish policy to keep experimental metrics out of executive and board views.'],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
@@ -494,14 +462,6 @@ class GlassDemo extends AbstractDemo
                     ['export', 'disabled', 'Keeps the review linked to live governed data'],
                     ['stale', 'warn', 'Shows stale metrics without hiding the full review page'],
                     ['lock', 'metric definitions', 'Lets editors revise layout without changing approved numbers'],
-                ],
-            ]],
-            ['id' => Utils::uid(), 'type' => 'questions', 'group' => 'main', 'data' => [
-                'title' => 'Publishing safeguards',
-                'items' => [
-                    ['title' => 'What remains editable?', 'text' => 'Editors can change draft layout and notes after publication, but the audience keeps seeing the approved metric set until a new publish action runs.'],
-                    ['title' => 'How are stale metrics handled?', 'text' => 'Choose warn, hide, or block. Most operating reviews use warn, while board packets usually block publication until finance confirms the load.'],
-                    ['title' => 'Can a reader export the view?', 'text' => 'Disable exports when you want the live dashboard to remain the source of truth. Enable scheduled snapshots only for audiences that need archived packets.'],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
@@ -626,9 +586,9 @@ class GlassDemo extends AbstractDemo
         if( !isset( $this->element ) )
         {
             $cards = [
-                ['title' => 'Product', 'text' => "Work with live metrics\n\n- [Platform](/)\n- [Pricing](/#pricing)\n- [Docs](/docs)"],
-                ['title' => 'Resources', 'text' => "Build a better reporting habit\n\n- [Field Notes](/blog)\n- [Metric contracts](/docs)\n- [Revenue model guide](/one-revenue-number-for-finance-and-product)"],
-                ['title' => 'Company', 'text' => "SignalLake Analytics Cloud\n\n- Security review\n- Data residency\n- hello@signallake.test"],
+                ['title' => 'Product', 'text' => "- [Platform](/)\n- [Pricing](/#pricing)\n- [Docs](/docs)"],
+                ['title' => 'Resources', 'text' => "- [Field Notes](/blog)\n- [Metric contracts](/docs)\n- [Revenue model guide](/one-revenue-number-for-finance-and-product)"],
+                ['title' => 'Company', 'text' => "- Security review\n- Data residency\n- hello@signallake.test"],
             ];
 
             $element = Element::forceCreate( [
