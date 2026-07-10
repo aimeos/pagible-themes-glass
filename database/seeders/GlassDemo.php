@@ -75,10 +75,6 @@ class GlassDemo extends AbstractDemo
                 'title' => 'Field Notes',
                 'subtitle' => 'Analytics practice',
                 'text' => 'Short essays from the SignalLake team on metric design, data freshness, executive reporting, and the habits that keep reporting trusted.',
-                'files' => [
-                    ['id' => $cover, 'type' => 'file'],
-                    ['id' => $this->img( 'meeting' ), 'type' => 'file'],
-                ],
             ]],
             ['id' => Utils::uid(), 'type' => 'blog', 'group' => 'main', 'data' => [
                 'title' => 'Latest articles',
@@ -135,8 +131,7 @@ class GlassDemo extends AbstractDemo
             ]],
             $this->articleHero(
                 'Make the next review easier to trust',
-                'See how SignalLake keeps metric sources, freshness, and ownership visible beside every dashboard.',
-                $this->img( 'control' )
+                'See how SignalLake keeps metric sources, freshness, and ownership visible beside every dashboard.'
             ),
         ], $blog );
 
@@ -182,8 +177,7 @@ class GlassDemo extends AbstractDemo
             ]],
             $this->articleHero(
                 'Give every important metric an owner',
-                'Use the SignalLake metric contract to record the definition, source, review cycle, and approval trail.',
-                $this->img( 'approval' )
+                'Use the SignalLake metric contract to record the definition, source, review cycle, and approval trail.'
             ),
         ], $blog );
 
@@ -220,8 +214,7 @@ class GlassDemo extends AbstractDemo
             ]],
             $this->articleHero(
                 'Set freshness rules around real decisions',
-                'See how SignalLake turns source timing, warnings, and publication holds into a clear operating contract.',
-                $this->img( 'pipeline' )
+                'See how SignalLake turns source timing, warnings, and publication holds into a clear operating contract.'
             ),
         ], $blog );
 
@@ -267,8 +260,7 @@ class GlassDemo extends AbstractDemo
             ]],
             $this->articleHero(
                 'Connect revenue signals',
-                'Build a governed revenue view that finance can approve and product teams can explain.',
-                $this->img( 'finance' )
+                'Build a governed revenue view that finance can approve and product teams can explain.'
             ),
         ], $blog );
 
@@ -524,10 +516,9 @@ class GlassDemo extends AbstractDemo
      *
      * @param string $title Hero title
      * @param string $text Hero text
-     * @param string $fileId Hero file ID
      * @return array<string, mixed> Hero content element
      */
-    protected function articleHero( string $title, string $text, string $fileId ) : array
+    protected function articleHero( string $title, string $text ) : array
     {
         return ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
             'title' => $title,
@@ -535,7 +526,6 @@ class GlassDemo extends AbstractDemo
             'text' => $text,
             'url' => '/docs',
             'button' => 'Explore the documentation',
-            'files' => [['id' => $fileId, 'type' => 'file']],
         ]];
     }
 
