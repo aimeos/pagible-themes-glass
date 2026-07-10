@@ -37,7 +37,6 @@ class GlassDemo extends AbstractDemo
         'data' => ['photo-1551288049-bebda4e38f71', 'Metric workspace', 'Data workspace with dashboards and charts'],
         'finance' => ['photo-1460925895917-afdab827c52f', 'Revenue dashboard', 'Laptop showing revenue and performance charts'],
         'infra' => ['photo-1558494949-ef010cbdcc31', 'Cloud infrastructure', 'Server infrastructure for real-time analytics'],
-        'lineage' => ['photo-1498050108023-c5249f4df0852', 'Source lineage', 'Code workspace showing a documented data source contract'],
         'meeting' => ['photo-1521737711867-e3b97375f902', 'Executive review', 'Business team reviewing quarterly metrics'],
         'owner' => ['photo-1552664730-d307ca884978', 'Metric owner review', 'Team reviewing ownership decisions in a planning session'],
         'pipeline' => ['photo-1516321318423-f06f85e504b3', 'Data pipeline', 'Modern workspace with connected screens'],
@@ -157,7 +156,7 @@ class GlassDemo extends AbstractDemo
                 'title' => 'What belongs in the metric record',
                 'cards' => [
                     ['title' => 'A named owner', 'text' => 'The person or team that can approve a definition change and explain the result in plain language.', 'file' => ['id' => $this->img( 'approval' ), 'type' => 'file']],
-                    ['title' => 'A source contract', 'text' => 'The table, stream, or application event that feeds the metric, with expected update timing.', 'file' => ['id' => $this->img( 'lineage' ), 'type' => 'file']],
+                    ['title' => 'A source contract', 'text' => 'The table, stream, or application event that feeds the metric, with expected update timing.', 'file' => ['id' => $this->img( 'pipeline' ), 'type' => 'file']],
                     ['title' => 'A change trail', 'text' => 'Every material definition change, visible beside the metric instead of buried in a ticket.', 'file' => ['id' => $this->img( 'changes' ), 'type' => 'file']],
                 ],
             ]],
