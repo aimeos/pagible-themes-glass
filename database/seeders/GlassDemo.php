@@ -75,7 +75,6 @@ class GlassDemo extends AbstractDemo
                 'title' => 'Field Notes',
                 'subtitle' => 'Analytics practice',
                 'text' => 'Short essays from the SignalLake team on metric design, data freshness, executive reporting, and the habits that keep reporting trusted.',
-                'background' => ['id' => $this->img( 'data' ), 'type' => 'file'],
                 'files' => [
                     ['id' => $cover, 'type' => 'file'],
                     ['id' => $this->img( 'meeting' ), 'type' => 'file'],
@@ -267,7 +266,7 @@ class GlassDemo extends AbstractDemo
                 'text' => "The important boundary is clear: finance owns the recognized number, while product and customer teams explain movement around it. SignalLake keeps those views linked without letting one overwrite the other.",
             ]],
             $this->articleHero(
-                'Connect revenue to the signals behind it',
+                'Connect revenue signals',
                 'Build a governed revenue view that finance can approve and product teams can explain.',
                 $this->img( 'finance' )
             ),
@@ -536,7 +535,6 @@ class GlassDemo extends AbstractDemo
             'text' => $text,
             'url' => '/docs',
             'button' => 'Explore the documentation',
-            'background' => ['id' => $this->img( 'data' ), 'type' => 'file'],
             'files' => [['id' => $fileId, 'type' => 'file']],
         ]];
     }
