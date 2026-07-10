@@ -64,7 +64,7 @@ class GlassDemo extends AbstractDemo
             'id' => $blogId,
             'lang' => 'en',
             'name' => 'Field Notes',
-            'title' => 'Field Notes | SignalLake',
+            'title' => 'Field Notes',
             'path' => 'blog',
             'tag' => 'blog',
             'type' => 'blog',
@@ -88,7 +88,7 @@ class GlassDemo extends AbstractDemo
                 'keywords' => 'analytics cloud blog, metric governance, data freshness, revenue analytics',
             ]],
             ['type' => 'social-media', 'data' => [
-                'title' => 'Field Notes | SignalLake',
+                'title' => 'Field Notes',
                 'description' => 'Practical writing for teams that depend on shared business metrics.',
                 'file' => ['id' => $cover, 'type' => 'file'],
             ]],
@@ -97,7 +97,7 @@ class GlassDemo extends AbstractDemo
         $this->page( [
             'lang' => 'en',
             'name' => 'Why weekly dashboards lose trust',
-            'title' => 'Why weekly dashboards lose trust | SignalLake',
+            'title' => 'Why weekly dashboards lose trust',
             'path' => 'why-weekly-dashboards-lose-trust',
             'tag' => 'article',
             'type' => 'blog',
@@ -137,7 +137,7 @@ class GlassDemo extends AbstractDemo
         $this->page( [
             'lang' => 'en',
             'name' => 'Metric ownership is a product decision',
-            'title' => 'Metric ownership is a product decision | SignalLake',
+            'title' => 'Metric ownership is a product decision',
             'path' => 'metric-ownership-is-a-product-decision',
             'tag' => 'article',
             'type' => 'blog',
@@ -183,7 +183,7 @@ class GlassDemo extends AbstractDemo
         $this->page( [
             'lang' => 'en',
             'name' => 'Freshness is more than a timestamp',
-            'title' => 'Freshness is more than a timestamp | SignalLake',
+            'title' => 'Freshness is more than a timestamp',
             'path' => 'freshness-is-more-than-a-timestamp',
             'tag' => 'article',
             'type' => 'blog',
@@ -219,15 +219,15 @@ class GlassDemo extends AbstractDemo
 
         $this->page( [
             'lang' => 'en',
-            'name' => 'One revenue number for finance and product',
-            'title' => 'One revenue number for finance and product | SignalLake',
+            'name' => 'One revenue number for all',
+            'title' => 'One revenue number for all',
             'path' => 'one-revenue-number-for-finance-and-product',
             'tag' => 'article',
             'type' => 'blog',
             'status' => 1,
         ], [
             $this->article(
-                'One revenue number for finance and product',
+                'One revenue number for all',
                 "Finance and product teams often argue because they are both right.\n\nFinance needs controlled revenue recognition. Product needs behavioral context. The work is not to pick one number, but to connect the approved number to the product signals around it.\n\nA revenue review becomes useful when the approved number stays intact and the surrounding product signals explain what changed: activation, expansion, usage depth, support risk, and account health.",
                 $this->img( 'finance' )
             ),
@@ -576,7 +576,7 @@ class GlassDemo extends AbstractDemo
         {
             $cards = [
                 ['title' => 'Product', 'text' => "- [Platform](/)\n- [Pricing](/#pricing)\n- [Docs](/docs)"],
-                ['title' => 'Resources', 'text' => "- [Field Notes](/blog)\n- [Metric contracts](/docs)\n- [Revenue model guide](/one-revenue-number-for-finance-and-product)"],
+                ['title' => 'Resources', 'text' => "- [Field Notes](/blog)\n- [Metric contracts](/docs)\n- [One revenue number for all](/one-revenue-number-for-finance-and-product)"],
                 ['title' => 'Company', 'text' => '- hello@signallake.test'],
             ];
 
