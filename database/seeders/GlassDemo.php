@@ -134,6 +134,11 @@ class GlassDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
                 'text' => "Dashboards earn trust when people can answer three questions quickly: where did this number come from, when did it change, and who can explain it?\n\nA small review ritual helps: start with stale or disputed metrics, confirm the owner, record the decision, and only then move to trend discussion. SignalLake puts those answers in the same view as the metric. That keeps weekly reviews from turning into archaeology.",
             ]],
+            $this->articleHero(
+                'Make the next review easier to trust',
+                'See how SignalLake keeps metric sources, freshness, and ownership visible beside every dashboard.',
+                $this->img( 'control' )
+            ),
         ], $blog );
 
         $this->page( [
@@ -176,6 +181,11 @@ class GlassDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
                 'text' => "SignalLake keeps metric definitions close to the data product, not hidden in a spreadsheet tab. Teams can still move quickly, but they move with a record.\n\nThe goal is not to slow analysts down. It is to make ownership obvious enough that a reader can trust the number without opening a ticket or asking which warehouse model happened to feed the latest screenshot.",
             ]],
+            $this->articleHero(
+                'Give every important metric an owner',
+                'Use the SignalLake metric contract to record the definition, source, review cycle, and approval trail.',
+                $this->img( 'approval' )
+            ),
         ], $blog );
 
         $this->page( [
@@ -209,6 +219,11 @@ class GlassDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
                 'text' => "The useful question is not whether the data loaded. It is whether the data is current enough for the decision in front of the team. A good dashboard makes that answer visible before the conversation starts.",
             ]],
+            $this->articleHero(
+                'Set freshness rules around real decisions',
+                'See how SignalLake turns source timing, warnings, and publication holds into a clear operating contract.',
+                $this->img( 'pipeline' )
+            ),
         ], $blog );
 
         $this->page( [
@@ -251,6 +266,11 @@ class GlassDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
                 'text' => "The important boundary is clear: finance owns the recognized number, while product and customer teams explain movement around it. SignalLake keeps those views linked without letting one overwrite the other.",
             ]],
+            $this->articleHero(
+                'Connect revenue to the signals behind it',
+                'Build a governed revenue view that finance can approve and product teams can explain.',
+                $this->img( 'finance' )
+            ),
         ], $blog );
 
         return $this;
@@ -496,6 +516,28 @@ class GlassDemo extends AbstractDemo
             'title' => $title,
             'file' => ['id' => $fileId, 'type' => 'file'],
             'text' => $text,
+        ]];
+    }
+
+
+    /**
+     * Creates the closing call-to-action hero for an article.
+     *
+     * @param string $title Hero title
+     * @param string $text Hero text
+     * @param string $fileId Hero file ID
+     * @return array<string, mixed> Hero content element
+     */
+    protected function articleHero( string $title, string $text, string $fileId ) : array
+    {
+        return ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
+            'title' => $title,
+            'subtitle' => 'SignalLake in practice',
+            'text' => $text,
+            'url' => '/docs',
+            'button' => 'Explore the documentation',
+            'background' => ['id' => $this->img( 'data' ), 'type' => 'file'],
+            'files' => [['id' => $fileId, 'type' => 'file']],
         ]];
     }
 
